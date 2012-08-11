@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical">
+  <ListView android:id="@android:id/list"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10" />
+  <LinearLayout android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+    <Button android:id="@+id/activity_manage2_add_button"
+            android:text="@string/add_alarm_button_label"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClickAdd" />
+    <Button android:text="@string/done_manage_button_label"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClickBack" />
+  </LinearLayout>
+</LinearLayout>

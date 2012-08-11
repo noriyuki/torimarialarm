@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">とりまりアラーム</string>
+  <string name="title_activity_main">Torimari Alarm</string>
+  <string name="menu_settings">Settings</string>
+
+  <!-- MainActivity -->
+  <string name="start_manage_button_label">Touch to set alarm</string>
+
+  <!-- ManageActivity -->
+  <string name="add_alarm_button_label">Add</string>
+  <string name="done_manage_button_label">Back</string>
+
+  <!-- EditActivity -->
+  <string name="editor_cancel_button_label">Cancel</string>
+  <string name="editor_delete_button_label">Delete</string>
+  <string name="editor_done_button_label">OK</string>
+  <string name="editor_turned_on_checkbox_label">Turn alarm on</string>
+  <string name="editor_vibrate_on_checkbox_label">Vibrate</string>
+
+  <!-- RingActivity -->
+  <string name="dismiss_button_label">Dismiss</string>
+  <string name="snooze_button_label">Snooze</string>
+
+  <!-- Alarm notification -->
+  <string name="toribe_mariko">Mariko Toribe</string>
+  <string name="snooze_quit_message">もうおこしてあげないよ！</string>
+
+  <!-- TimePreference -->
+  <string name="time_picker_cancel">Cancel</string>
+  <string name="time_picker_set">Set</string>
+</resources>

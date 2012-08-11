@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <string-array name="ringtoneTitle">
+    <item name="ohayou">おはよう〜</item>
+    <item name="otsukaresama">おつかれさま〜</item>
+  </string-array>  
+  <string-array name="ringtoneId">
+    <item name="ohayou">0</item>
+    <item name="otsukaresama">1</item>
+  </string-array>
+</resources>
