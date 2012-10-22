@@ -1,10 +1,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/alarm_dialog_main_layout"
+                android:id="@+id/photo_view_main_layout"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:minHeight="460dp"
                 android:minWidth="300dp" >
-  <LinearLayout android:id="@+id/snooze_and_dismiss_buttons_array"
+  <LinearLayout android:id="@+id/photo_view_buttons_array"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -20,8 +20,8 @@
               android:layout_centerHorizontal="true"
               android:layout_centerVertical="true"
               android:background="#aa333333"
-              android:onClick="onSnoozeButtonClick"
-              android:text="@string/snooze_button_label"
+              android:onClick="onPrevButtonClick"
+              android:text="@string/prev_button_label"
               android:textColor="#eeeeee"
               android:textSize="15sp" />
     </RelativeLayout>
@@ -38,15 +38,33 @@
               android:layout_centerHorizontal="true"
               android:layout_centerVertical="true"
               android:background="#aa333333"
-              android:onClick="onDismissButtonClick"
-              android:text="@string/dismiss_button_label"
+              android:onClick="onBackButtonClick"
+              android:text="@string/back_button_label"
+              android:textColor="#eeeeee"
+              android:textSize="15sp" />
+    </RelativeLayout>
+    <LinearLayout android:layout_width="1dp"
+                  android:layout_height="fill_parent"
+                  android:background="#000000" >
+    </LinearLayout>
+    <RelativeLayout android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1" >
+      <Button android:id="@+id/button3"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:layout_centerHorizontal="true"
+              android:layout_centerVertical="true"
+              android:background="#aa333333"
+              android:onClick="onNextButtonClick"
+              android:text="@string/next_button_label"
               android:textColor="#eeeeee"
               android:textSize="15sp" />
     </RelativeLayout>
   </LinearLayout>
   <LinearLayout android:layout_width="fill_parent"
                 android:layout_height="1dp"
-                android:layout_above="@+id/snooze_and_dismiss_buttons_array"
+                android:layout_above="@+id/photo_view_buttons_array"
                 android:layout_alignParentLeft="true"
                 android:background="#000000" >
   </LinearLayout>

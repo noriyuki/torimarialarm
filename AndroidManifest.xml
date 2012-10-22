@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="jp.cluck.torimarialarm"
-          android:versionCode="1"
+          android:versionCode="2"
           android:versionName="0.1" >
   <uses-sdk android:minSdkVersion="8"
             android:targetSdkVersion="15" />
@@ -11,7 +11,8 @@
                android:theme="@style/AppTheme">
     <activity android:name=".MainActivity"
               android:theme="@style/AppTheme"
-              android:launchMode="singleTop">
+              android:launchMode="singleTop"
+              android:screenOrientation="portrait">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
@@ -23,9 +24,19 @@
     </activity>
     <activity android:name=".RingActivity"
               android:theme="@style/AppTheme"
-              android:launchMode="singleInstance">
+              android:launchMode="singleInstance"
+              android:screenOrientation="portrait">
     </activity>
     <activity android:name=".EditActivity"></activity>
+    <activity android:name=".PhotoGalleryActivity"
+              android:theme="@style/AppTheme"
+              android:launchMode="singleTop">
+    </activity>
+    <activity android:name=".PhotoViewActivity"
+              android:theme="@style/AppTheme"
+              android:launchMode="singleTop"
+              android:screenOrientation="portrait">
+    </activity>
     <receiver android:name=".AlarmReceiver" android:process=":remote" />
   </application>
 </manifest>

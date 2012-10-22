@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
   <string-array name="ringtoneTitle">
-    <item name="ohayou">おはよう〜</item>
-    <item name="otsukaresama">おつかれさま〜</item>
-  </string-array>  
+    <item name="ohayo">おはよう</item>
+    <item name="ohayogozaimasu">おはようございます</item>
+    <item name="okite">おきて</item>
+    <item name="asadesuyo">朝ですよ</item>
+    <item name="okinaitochikokushichauyo">おきないと遅刻しちゃうよ</item>
+    <item name="gutentag">Guten tag</item>
+    <item name="kyoumoissyoniganbaroune">今日も一緒にがんばろうね</item>
+    <item name="otsukaresamadesita">お疲れ様でした</item>
+    <item name="oyasuminasai">おやすみなさい</item>
+  </string-array>
   <string-array name="ringtoneId">
-    <item name="ohayou">0</item>
-    <item name="otsukaresama">1</item>
+    <item name="ohayo">0</item>
+    <item name="ohayogozaimasu">1</item>
+    <item name="okite">2</item>
+    <item name="asadesuyo">3</item>
+    <item name="okinaitochikokushichauyo">4</item>
+    <item name="gutentag">5</item>
+    <item name="kyoumoissyoniganbaroune">6</item>
+    <item name="otsukaresamadesita">7</item>
+    <item name="oyasuminasai">8</item>
   </string-array>
 </resources>

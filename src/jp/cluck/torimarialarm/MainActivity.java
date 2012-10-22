@@ -5,6 +5,7 @@ import java.util.TimerTask;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
@@ -14,6 +15,8 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
   public static final int START_MANAGE_ACTIVITY = 0;
+  public static final int START_PHOTO_GALLERY_ACTIVITY = 1;
+  public static final String FB_URL = "http://www.facebook.com/mariko.toribe";
 
   @Override 
   public void onCreate(Bundle savedInstanceState) {
@@ -35,14 +38,16 @@ public class MainActivity extends Activity {
           });
         }
       }, 0, 5 * 1000);  // Update clock every 5 seconds
+
+    // Initialize touch sound.
+    mVoiceData = VoiceData.getInstance(this);
   }
 
   @Override
   public boolean onTouchEvent(MotionEvent event) {
-    if (event.getAction() == MotionEvent.ACTION_DOWN) {
-      Log.i("TODO: handle touch event to play sound");
-    }
-    return true;
+    if (event.getAction() == MotionEvent.ACTION_DOWN)
+      mVoiceData.playRandomly();
+    return false;
   }
 
   @Override
@@ -56,6 +61,18 @@ public class MainActivity extends Activity {
     startActivityForResult(intent, START_MANAGE_ACTIVITY);
   }
 
+  public void onClickStartPhotoGalleryButton(View view) {
+    Intent intent = new Intent(this, PhotoGalleryActivity.class);
+    startActivityForResult(intent, START_PHOTO_GALLERY_ACTIVITY);
+  }
+
+  public void onClickFacebookButton(View view) {
+    Intent intent = new Intent(Intent.ACTION_VIEW);
+    intent.setData(Uri.parse(FB_URL));
+    startActivity(intent);
+  }
+
   private Timer mTimer;
   private Handler mHandler;
+  private VoiceData mVoiceData = null;
 }

@@ -5,7 +5,9 @@
   <string name="menu_settings">Settings</string>
 
   <!-- MainActivity -->
-  <string name="start_manage_button_label">Touch to set alarm</string>
+  <string name="start_manage_button_label">+ Set alarm</string>
+  <string name="start_photo_gallery_button_label">+ Gallery</string>
+  <string name="goto_facebook_button_label">+ Facebook</string>
 
   <!-- ManageActivity -->
   <string name="add_alarm_button_label">Add</string>
@@ -29,4 +31,9 @@
   <!-- TimePreference -->
   <string name="time_picker_cancel">Cancel</string>
   <string name="time_picker_set">Set</string>
+  
+  <!--  PhotoViewActivity -->
+  <string name="next_button_label">Next</string>
+  <string name="prev_button_label">Prev</string>
+  <string name="back_button_label">Back</string>
 </resources>

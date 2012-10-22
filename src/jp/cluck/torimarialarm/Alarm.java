@@ -7,8 +7,15 @@ import android.content.SharedPreferences;
 
 class AlarmResource {
   private static final int[][] RESOURCE_ID_TABLE = {
-    { R.raw.alarm1, R.drawable.alarm1 },
-    { R.raw.alarm2, R.drawable.alarm2 },
+    { R.raw.ohayo, R.drawable.ohayo },
+    { R.raw.ohayogozaimasu, R.drawable.ohayogozaimasu },
+    { R.raw.okite, R.drawable.okite },
+    { R.raw.asadesuyo, R.drawable.asadesuyo },
+    { R.raw.okinaitochikokushichauyo, R.drawable.okinaitochikokusityauyo },
+    { R.raw.gutentag, R.drawable.gutentag },
+    { R.raw.kyoumoisshoniganbaroune, R.drawable.kyoumoissyoniganbaroune },
+    { R.raw.otsukaresamadeshita, R.drawable.otsukaresamadesita },
+    { R.raw.oyasuminasai, R.drawable.oyasuminasai },
   };
 
   public static int getSoundId(int id) {
