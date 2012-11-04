@@ -5,6 +5,7 @@ import java.util.TimerTask;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -39,8 +40,11 @@ public class MainActivity extends Activity {
         }
       }, 0, 5 * 1000);  // Update clock every 5 seconds
 
-    // Initialize touch sound.
-    mVoiceData = VoiceData.getInstance(this);
+    // Initialize touch sound. Note that calling setVolumeControlStream ensures that volume
+    // key controls volume of STREAM_MUSIC.
+    setVolumeControlStream(AudioManager.STREAM_MUSIC);
+    mVoiceData = new VoiceData();
+    mVoiceData.init(this);
   }
 
   @Override

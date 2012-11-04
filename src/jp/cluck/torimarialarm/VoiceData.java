@@ -19,15 +19,7 @@ public class VoiceData {
     R.raw.gutennacht2,
   };
 
-  public static synchronized VoiceData getInstance(Context context) {
-    if (sVoiceData == null) {
-      sVoiceData = new VoiceData();
-      sVoiceData.init(context);
-    }
-    return sVoiceData;
-  }
-
-  private void init(Context context) {
+  public void init(Context context) {
     mContext = context;
     mSoundPool = new SoundPool(3, AudioManager.STREAM_MUSIC, 0);
     mLoaded = new HashSet<Integer>();
@@ -48,7 +40,7 @@ public class VoiceData {
   }
 
   public synchronized void playRandomly() {
-    // With probability 0.9, the sound is libetoribe. The remaining 0.1 is
+    // With probability 0.4, the sound is libetoribe. The remaining 0.6 is
     // equally distributed to the remaining sounds.
     int index = 0;
     if (mRand.nextInt(100) >= 60) {
@@ -56,11 +48,17 @@ public class VoiceData {
     }
     final int soundId = mSoundIds[index];
     if (mLoaded.contains(Integer.valueOf(soundId))) {
+      Log.i("Playing " + soundId);
+
       AudioManager am = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
-      float actualVolume = (float) am.getStreamVolume(AudioManager.STREAM_MUSIC);
+      int streamVolume = am.getStreamVolume(AudioManager.STREAM_MUSIC);
+      if (streamVolume == 0) return;
       float maxVolume = (float) am.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
-      float volume = actualVolume / maxVolume;
-      mSoundPool.play(soundId, volume, volume, 1, 0, 1f);
+      float volume = 0.6f + 0.4f * (float) streamVolume / maxVolume;
+      if (volume > 0.99f) volume = 0.99f;
+      mSoundPool.play(soundId, volume, volume, 1, 0, 1.0f);
+    } else {
+      Log.e("Sound ID " + soundId + " not loaded.");
     }
   }
 
@@ -69,6 +67,4 @@ public class VoiceData {
   private HashSet<Integer> mLoaded = null;
   private int[] mSoundIds = null;
   private Random mRand = null;
-
-  private static VoiceData sVoiceData = null;
 }
